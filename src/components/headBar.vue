@@ -1,0 +1,59 @@
+<template>
+  <el-menu
+    mode="horizontal"
+  @select="onChange">
+    <div class="blogLogo">
+      包包博客 BabyBlog
+    </div>
+    <el-menu-item index="/home">
+      首页
+    </el-menu-item>
+    <el-menu-item index="/myBlogs">
+      我的博客
+    </el-menu-item>
+    <el-menu-item index="/help">
+      帮助中心
+    </el-menu-item>
+    <el-menu-item index="/setting">
+      设置
+    </el-menu-item>
+    <div class="nightModeButton">
+      <el-switch v-model="$store.state.isDarkMode" @change="changeDarkMode"></el-switch>
+      <p class="nightModeButton">
+        夜间模式
+      </p>
+    </div>
+
+  </el-menu>
+</template>
+
+<script>
+import {useToggle} from "@vueuse/core";
+
+export default {
+  name: "headBar",
+  methods:{
+    onChange: function (index) {
+      this.$router.push(index);
+    },
+    changeDarkMode(){
+      useToggle(this.$store.state.isDarkMode);
+    }
+  },
+}
+</script>
+
+<style scoped lang="scss">
+@use "element-plus/theme-chalk/src/common/var";
+
+.nightModeButton{
+  display: inline-flex;
+  flex-direction: column;
+}
+div.nightModeButton{
+  position: static;
+}
+div.blogLogo{
+  text-shadow: 2px 2px 5px var.$color-primary;
+}
+</style>
