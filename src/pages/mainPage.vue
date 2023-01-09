@@ -1,8 +1,8 @@
 <template>
 <el-aside>
   <el-menu @click="changeSelectId">
-    <el-menu-item v-for="blog of mainBlogs" :key="blog" :index="blog.id">
-      {{blog.title}}
+    <el-menu-item v-for="blog of mainBlogs" :key="String(blog.id)" :index="blog.id">
+      <h1 class="title">{{blog.title}}</h1>
     </el-menu-item>
   </el-menu>
 </el-aside>
@@ -22,20 +22,19 @@ export default {
       selectId: null,
     }
   },
-  computed: {
+  computed:{
     selectBlogView(){
       for(let blog of this.mainBlogs){
         if(blog.id === this.selectId){
-          return marked.parse(blog.content);
+          return  marked.parse(blog.content);
         }
       }
-      return marked(this.$store.state.missingBlog.content);
+      return marked.parse(this.$store.state.missingBlog.content);
     }
-
   },
   methods:{
     getBlog(){
-      axios.get('http://43.142.78.228:4444/allBlogs')
+      axios.get('server/getABlog')
           .then((response)=>{
             this.mainBlogs.push(response.data)
           })
@@ -44,15 +43,21 @@ export default {
           })
     },
     changeSelectId(index){
+      console.log(index)
       this.selectId=index;
     }
   },
   mounted() {
-    this.getBlog()
+    for(let i=1; i<=3;i++){
+      this.getBlog();
+    }
   }
 }
 </script>
 
-<style scoped>
-
+<style>
+.title{
+  margin-left: auto;
+  margin-right: auto;
+}
 </style>

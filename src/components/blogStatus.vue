@@ -28,14 +28,14 @@ export default {
   },
   methods:{
     sendToServer(){
-      axios.post('http://43.142.78.228:4444/updateBlog',{
+      axios.post('server/updateBlog',{
         title: this.$store.getters.getBlogNowById.title,
         content: this.$store.getters.getBlogNowById.content,
         id: this.$store.getters.getBlogNowById.id,
         createTime: this.$store.getters.getBlogNowById.createTime,
       })
-          .then(response=>{
-            console.log(response)
+          .then(()=>{
+            alert('上传成功')
           })
           .catch(e=>{
             alert(e);
