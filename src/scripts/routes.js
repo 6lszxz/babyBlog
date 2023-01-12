@@ -2,6 +2,9 @@ import mainPage from "@/pages/mainPage";
 import helpCenter from "@/pages/helpCenter";
 import myBlogs from "@/pages/myBlogsPage";
 import settingsPage from "@/pages/settingsPage";
+import loginPage from "@/pages/loginPage";
+import registerPage from "@/pages/registerPage";
+import mySpacePage from "@/pages/mySpacePage"
 
 const titlePrefix = '包包博客-'
 
@@ -36,6 +39,30 @@ export const routes = [
         component: settingsPage,
         meta: {
             title: `${titlePrefix}设置`
+        }
+    },
+    {
+        path: '/login',
+        name: 'login',
+        component: loginPage,
+        meta:{
+            title: `${titlePrefix}登录`
+        }
+    },
+    {
+        path: '/register',
+        name: 'register',
+        component: registerPage,
+        meta: {
+            title: `${titlePrefix}注册`
+        }
+    },
+    {
+        path: '/mySpace',
+        name: 'mySpace',
+        component: mySpacePage,
+        meta:{
+            title: `${titlePrefix}个人中心`
         }
     },
     {path: '/', redirect: '/home'}

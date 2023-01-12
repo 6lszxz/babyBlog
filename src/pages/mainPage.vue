@@ -1,6 +1,6 @@
 <template>
 <el-aside>
-  <el-menu @click="changeSelectId">
+  <el-menu @select="changeSelectId">
     <el-menu-item v-for="blog of mainBlogs" :key="String(blog.id)" :index="blog.id">
       <h1 class="title">{{blog.title}}</h1>
     </el-menu-item>
@@ -34,7 +34,7 @@ export default {
   },
   methods:{
     getBlog(){
-      axios.get('server/getABlog')
+      axios.get('http://43.142.78.228:3636/getABlog')
           .then((response)=>{
             this.mainBlogs.push(response.data)
           })

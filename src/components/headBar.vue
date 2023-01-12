@@ -17,6 +17,15 @@
     <el-menu-item index="/setting">
       设置
     </el-menu-item>
+    <el-menu-item index="/register" v-if="!$store.state.userId">
+      注册
+    </el-menu-item>
+    <el-menu-item index="/login" v-if="!$store.state.userId">
+      登录
+    </el-menu-item>
+    <el-menu-item index="/mySpace" v-if="$store.state.userId">
+      {{$store.state.userId}}的个人中心
+    </el-menu-item>
     <div class="nightModeButton">
       <el-switch v-model="$store.state.isDarkMode" @change="changeDarkMode"></el-switch>
       <p class="nightModeButton">
@@ -34,6 +43,7 @@ export default {
   name: "headBar",
   methods:{
     onChange: function (index) {
+      console.log(this.$store.state.userId);
       this.$router.push(index);
     },
     changeDarkMode(){
@@ -43,7 +53,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 @use "element-plus/theme-chalk/src/common/var";
 
 .nightModeButton{

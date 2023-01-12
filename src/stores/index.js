@@ -26,7 +26,9 @@ export const store= createStore({
                 valueLight: 'light',
             }),
             // 白天模式时选择的主题
-            themeNow: localStorage.getItem('themeNow'),
+            themeNow: window.localStorage.getItem('themeNow'),
+            // 注册的用户id，登录后就被更改到数据库中已经注册的id
+            userId: window.sessionStorage.getItem("username"),
         }
     },
     getters:{

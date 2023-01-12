@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 
 export default {
   name: "showMyBlogs",
@@ -39,7 +40,13 @@ export default {
     }
   },
   mounted() {
-
+    axios.post('http://43.142.78.228:3636/getBlogByUsername',{
+      username: this.$store.state.userId
+    })
+      .then((res)=>{
+        console.log(this.$store.state.userId);
+        this.$store.state.blogList = res.data;
+      })
   }
 
 }
