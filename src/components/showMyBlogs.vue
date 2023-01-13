@@ -40,7 +40,7 @@ export default {
     }
   },
   mounted() {
-    axios.post('http://43.142.78.228:3636/getBlogByUsername',{
+    axios.post('/server/getBlogByUsername',{
       username: this.$store.state.userId
     })
       .then((res)=>{

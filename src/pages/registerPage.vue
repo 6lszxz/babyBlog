@@ -20,7 +20,7 @@ export default {
   },
   methods:{
     tryRegister(){
-      axios.post('http://43.142.78.228:3636/register',{
+      axios.post('/server/register',{
         username: this.username,
         password: this.password,
       })

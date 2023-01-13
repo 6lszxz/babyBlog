@@ -34,7 +34,7 @@ export default {
   },
   methods:{
     getBlog(){
-      axios.get('http://43.142.78.228:3636/getABlog')
+      axios.get('/server/getABlog')
           .then((response)=>{
             this.mainBlogs.push(response.data)
           })

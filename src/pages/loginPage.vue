@@ -21,7 +21,7 @@ export default {
   },
   methods:{
     tryLogin(){
-      axios.post('http://43.142.78.228:3636/login',{
+      axios.post('/server/login',{
         username: this.username,
         password: this.password,
       })

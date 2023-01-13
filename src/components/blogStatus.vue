@@ -28,7 +28,7 @@ export default {
   },
   methods:{
     sendToServer(){
-      axios.post('http://43.142.78.228:3636/updateBlog',{
+      axios.post('/server/updateBlog',{
         title: this.$store.getters.getBlogNowById.title,
         content: this.$store.getters.getBlogNowById.content,
         id: this.$store.getters.getBlogNowById.id,
