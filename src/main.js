@@ -10,6 +10,7 @@ import 'element-plus/theme-chalk/src/var.scss'
 
 const app = createApp(App);
 
+
 const router = createRouter({
     routes: routes,
     history: createWebHashHistory(),

@@ -24,9 +24,6 @@ export default{
 }
 </script>
 
-<style scoped>
-el-button{
-  margin-left: auto;
-  margin-right: auto;
-}
+<style lang="scss">
+@use "@/styles/index.scss"
 </style>

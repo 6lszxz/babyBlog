@@ -1,6 +1,6 @@
 <template>
   <!-- 展示我的所有博客列表-->
-  <el-menu mode="vertical" @select="chooseBlog">
+  <el-menu mode="vertical" @select="chooseBlog" class="blogList">
     <el-menu-item v-for="blog of $store.state.blogList" :index="String(blog.id)" :key="blog.id">
       <h1 class="title">{{blog.title}}</h1>
     </el-menu-item>
@@ -52,14 +52,6 @@ export default {
 }
 </script>
 
-<style scoped>
-.title{
-  margin-left: auto;
-  margin-right: auto;
-}
-el-button{
-  margin-left: auto;
-  margin-right: auto;
-}
-
+<style lang="scss">
+@use "@/styles/index.scss"
 </style>

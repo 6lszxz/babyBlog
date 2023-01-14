@@ -54,16 +54,5 @@ export default {
 </script>
 
 <style lang="scss">
-@use "element-plus/theme-chalk/src/common/var";
-
-.nightModeButton{
-  display: inline-flex;
-  flex-direction: column;
-}
-div.nightModeButton{
-  position: static;
-}
-div.blogLogo{
-  text-shadow: 2px 2px 5px var.$color-primary;
-}
+@use "@/styles/index.scss"
 </style>

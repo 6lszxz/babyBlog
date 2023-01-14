@@ -1,0 +1,94 @@
+@use "element-plus/theme-chalk/src/common/var";
+.title{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.blogList{
+    overflow: visible, auto;
+    height: 90vh;
+}
+
+.el-button{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pleaseChooseBlog{
+    position: absolute;
+    left: 50%;
+    top: auto;
+}
+
+.blogWritingArea{
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 85vh;
+    overflow: hidden;
+}
+
+.blogWriting{
+    height: 100%;
+    width: 100%;
+    padding: 0 0 0 0;
+    border: 0;
+}
+
+.blogView{
+    padding: 0 0 0 0;
+    margin: 0;
+    border: 0;
+    overflow: visible auto;
+    word-wrap: break-word;
+    width: 100%;
+    height: 75vh;
+}
+
+.userInputGroup{
+    flex-direction: column;
+}
+.nightModeButton{
+    display: inline-flex;
+    flex-direction: column;
+}
+div.nightModeButton{
+    position: static;
+}
+
+div.blogLogo{
+    text-shadow: 0.5vh 0.5vh 0.5vh var.$color-primary;
+}
+
+div.oppositeColor{
+    color: var.$color-white;
+}
+*.oppositeColor{
+    background-color: var.$color-primary;
+}
+
+.blogFunctions{
+    display: flex;
+    flex-direction: row;
+}
+
+.myBlogsContainerArea{
+    height: 90vh;
+    overflow-y: hidden;
+}
+
+.blogViewBox{
+    overflow: hidden;
+}
+.myBlogsBox{
+    overflow: hidden;
+}
+.myBlogsMainArea{
+    overflow-y: hidden;
+}
+*{
+    padding-bottom: 0;
+}
+.el-divider{
+    margin: 1vh;
+}

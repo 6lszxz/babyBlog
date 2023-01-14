@@ -39,12 +39,5 @@ export default {
 </script>
 
 <style lang="scss">
-
-.userInputGroup{
-  flex-direction: column;
-}
-.userdataInput{
-
-}
-
+@use "@/styles/index.scss"
 </style>

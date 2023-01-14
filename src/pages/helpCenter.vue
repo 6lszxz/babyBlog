@@ -53,6 +53,6 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style lang="scss">
+@use "@/styles/index.scss"
 </style>

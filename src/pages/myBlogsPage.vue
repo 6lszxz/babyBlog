@@ -4,9 +4,9 @@
     <show-my-blogs/>
   </el-aside>
   <!-- 主页面-->
-  <el-container v-if="$store.state.blogIdNow">
-    <el-main>
-      <el-container >
+  <el-container v-if="$store.state.blogIdNow" class="myBlogsContainerArea">
+    <el-main class="myBlogsMainArea">
+      <el-container class="myBlogsBox">
         <!-- 写博客-->
         <el-aside class="blogWritingArea">
           <el-input
@@ -28,8 +28,9 @@
           </el-input>
         </el-aside>
         <!-- 预览页面-->
-        <el-main class="blogView">
-          <div v-html="blogView"></div>
+        <el-main class="blogViewBox">
+          {{ $store.getters.getBlogNowById.title }}
+          <div v-html="blogView" class="blogView"></div>
         </el-main>
       </el-container>
     </el-main>
@@ -70,38 +71,5 @@ export default {
 </script>
 
 <style lang="scss">
-@use "element-plus/theme-chalk/src/common/var";
-
-.pleaseChooseBlog{
-  position: absolute;
-  left: 50%;
-  top: auto;
-}
-.blogWritingArea{
-  left: 0;
-  top: 0;
-  width: 50%;
-  height: 49em;
-  overflow: hidden;
-}
-.blogWriting{
-  height: 100%;
-  width: 100%;
-  padding: 0 0 0 0;
-  border: 0;
-}
-.blogView > * {
-  padding: 0 0 0 0;
-  margin: 0;
-  border: 0;
-  overflow: visible auto;
-  word-wrap: break-word;
-  width: 100%;
-  height: 46rem;
-}
-
-el-divider{
-  height: 50%;
-}
-
+@use "@/styles/index.scss"
 </style>
